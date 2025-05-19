@@ -1,0 +1,975 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi | Cendekia Libs</title>
+    <link rel="icon" type="image/x-icon" href="images/logo libs.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#054676',
+                        secondary: '#6b8c41',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .book-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #054676 0%, #054676 50%, #6b8c41 100%);
+        }
+        
+        .nav-button {
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button.active {
+            background-color: #054676;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2">
+                        <span class="text-xl font-bold text-primary">Cendekia Libs</span>
+                    </div>
+                    <div class="hidden md:ml-8 md:flex md:space-x-8">
+                        <a href="home.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Beranda</a>
+						<a href="profil.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Profil</a>
+                        <a href="katalog.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Katalog</a>
+                        <a href="koleksi.html" class="border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Koleksi</a>
+                        <a href="layanan.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Layanan</a>
+						<a href="agenda.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Agenda</a>
+                        <a href="berita.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Berita</a>
+						<a href="panduan.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Panduan & FAQ</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Koleksi Header -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl">
+                Koleksi Perpustakaan
+            </h1>
+            <p class="mt-6 text-xl max-w-3xl mx-auto">
+                Jelajahi berbagai koleksi buku, e-journal, dan repositori yang tersedia di perpustakaan kami.
+            </p>
+            <div class="mt-8 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Cari koleksi..." class="w-full py-4 px-6 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button class="absolute right-3 top-3 bg-primary text-white p-2 rounded-full hover:bg-secondary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="bg-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="nav-button active px-6 py-3 rounded-md text-white bg-primary font-medium">
+                    Koleksi Buku
+                </div>
+                <div class="nav-button px-6 py-3 rounded-md text-gray-700 bg-gray-200 font-medium">
+                    E-Journal
+                </div>
+                <div class="nav-button px-6 py-3 rounded-md text-gray-700 bg-gray-200 font-medium">
+                    Repositori
+                </div>
+				<div class="nav-button px-6 py-3 rounded-md text-gray-700 bg-gray-200 font-medium">
+                    Jurnal
+                </div>
+				<div class="nav-button px-6 py-3 rounded-md text-gray-700 bg-gray-200 font-medium">
+                    Skripsi
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Koleksi Description -->
+    <div class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Koleksi Buku
+                </h2>
+            </div>
+            <div class="prose prose-lg max-w-4xl mx-auto text-gray-500">
+                <p class="mb-6 text-center">
+                    Koleksi buku Perpustakaan Cendekia mencakup berbagai kategori, mulai dari fiksi, non-fiksi, referensi, hingga buku akademik. Semua koleksi dapat diakses oleh anggota perpustakaan.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Koleksi Content -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8 text-center">
+                <h2 class="text-2xl font-bold text-gray-900">Koleksi Populer</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                <!-- Book 1 -->
+                 <div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-atomic-habits')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/atomic habbits.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Atomic Habits</h3>
+                                <p class="text-sm text-gray-600">James Clear</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Non-Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2019</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.7)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-filosofi-teras')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/filosofi teras.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Filosofi Teras</h3>
+                                <p class="text-sm text-gray-600">Henry Manampiring</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Non-Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2018</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.9)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-tentang-kamu')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/tentang kamu.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Tentang Kamu</h3>
+                                <p class="text-sm text-gray-600">Tere Liye</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2021</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="far fa-star text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.2)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-laut-bercerita')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/laut bercerita.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Laut Bercerita </h3>
+                                <p class="text-sm text-gray-600">Leila S. Chudori </p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2017</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.6)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 5 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-mariposa')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/mariposa.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Mariposa</h3>
+                                <p class="text-sm text-gray-600">Luluk HF</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2018</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="far fa-star text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.2)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- Book 6 -->
+				<div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-laskar-pelangi')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/laskar pelangi.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Laskar Pelangi</h3>
+                                <p class="text-sm text-gray-600">Andrea Hirata</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2005</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="far fa-star text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.2)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- Book 7 -->
+				<div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-unfinished-goodbye')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/unf.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Unfinished Goodbye</h3>
+                                <p class="text-sm text-gray-600">Syahid Muhammad</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2024</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="far fa-star-half-alt text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.5)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- Book 8 -->
+				<div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-gadis-kretek')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/gadis.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Gadis Kretek</h3>
+                                <p class="text-sm text-gray-600">Ratih Kumala</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2012</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="far fa-star-half-alt text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.5)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- Book 9 -->
+				<div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-the-alpha-girls')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/the.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">The Alpha Girls</h3>
+                                <p class="text-sm text-gray-600">Henry Manampiring</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2020</span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="far fa-star-half-alt text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.5)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- Book 10 -->
+				<div class="book-card bg-white rounded-lg overflow-hidden shadow-md cursor-pointer" onclick="openModal('modal-hujan')">
+                    <div class="relative pb-48 overflow-hidden">
+                        <img src="images/hujan.jpeg" alt="Book cover" class="absolute inset-0 h-full w-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Hujan</h3>
+                                <p class="text-sm text-gray-600">Tere Liye</p>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                                Fiksi
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <div>
+                                <span class="text-xs text-gray-500">2016 </span>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500 ml-1">(4.5)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+			<!-- Book Modals -->
+    <!-- Modal for Atomic Habits -->
+    <div id="modal-atomic-habits" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-atomic-habits')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/atomic habbits.jpeg" alt="Atomic Habits" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Atomic Habits</h3>
+                    <p class="text-sm text-gray-600">James Clear</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.7)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Non-Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+                    Dalam Atomic Habits, James Clear menekankan bahwa perubahan kebiasaan sebaiknya berfokus pada identitas diri, bukan hanya hasil akhir. Ia menguraikan tiga tingkat perubahan: hasil, proses, dan identitas yang semuanya penting untuk perubahan yang positif dan berkelanjutan. Selain itu, ia menawarkan empat aturan perubahan perilaku: buat perubahan terlihat, menarik, mudah, dan memuaskan. Aturan ini membantu membentuk kebiasaan baru sekaligus memahami perilaku manusia.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Gramedia Pustaka Utama</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2019</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">356</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9786020633176</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Filosofi Teras -->
+    <div id="modal-filosofi-teras" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-filosofi-teras')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/filosofi teras.jpeg" alt="Filosofi Teras" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Filosofi Teras</h3>
+                    <p class="text-sm text-gray-600">Henry Manampiring</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.9)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Non-Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+                    Buku Filosofi Teras diawali dengan survei tentang meningkatnya kecemasan masyarakat dan pengalaman pribadi penulis yang dipenuhi emosi negatif. Penyebab utama kecemasan tersebut dijelaskan sebagai akibat dari pola pikir yang keliru. Penulis menyarankan perbaikan pola pikir melalui penerapan filsafat Stoa atau Stoikisme yang disebut Filosofi Teras dalam kehidupan sehari-hari. Inti ajarannya adalah dikotomi kendali, yaitu membedakan hal yang bisa dan tidak bisa kita kendalikan, sebagai kunci untuk mencapai kebahagiaan.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Buku Kompas</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2018</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">298</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9786024125189</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <!-- Modal for Tentang Kamu -->
+    <div id="modal-tentang-kamu" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-tentang-kamu')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/tentang kamu.jpeg" alt="Tentang Kamu" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Tentang Kamu</h3>
+                    <p class="text-sm text-gray-600">Tere Liye</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="far fa-star text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.2)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+                    Terima kasih untuk kesempatan mengenalmu, itu adalah salah satu anugerah terbesar hidupku. Cinta memang tidak perlu ditemukan, cintalah yang akan menemukan kita.
+					Terima kasih. Nasihat lama itu benar sekali, aku tidak akan menangis karena sesuatu telah berakhir, tapi aku akan tersenyum karena sesuatu itu pernah terjadi.
+					Masa lalu. Rasa sakit. Masa depan. Mimpi-mimpi. Semua akan berlalu, seperti sungai yang mengalir. Maka biarlah hidupku mengalir seperti sungai kehidupan.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Republika Penerbit</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2021</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">524</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9786239554569</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>	
+	
+	<!-- Modal for Hujan -->
+    <div id="modal-hujan" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-hujan')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/hujan.jpeg" alt="Hujan" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Hujan</h3>
+                    <p class="text-sm text-gray-600">Tere Liye</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.5)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+                    Mengisahkan Lail, seorang gadis yang selamat dari bencana letusan gunung dan gempa dahsyat, lalu menjadi yatim piatu. Lail kemudian bertemu dengan Esok, seorang pemuda yang menjadi penyemangat hidupnya, dan keduanya saling mendukung dalam menghadapi masa sulit. Novel ini berlatar belakang masa depan yang futuristik dengan teknologi canggih, dan mengeksplorasi tema cinta, kehilangan, trauma, dan pilihan untuk melupakan kenangan menyakitkan.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Gramedia Pustaka Utama</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2016</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">320</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9786020324784</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>	
+	
+	<!-- Modal for Laut bercerita -->
+    <div id="modal-laut-bercerita" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-laut-bercerita')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/laut bercerita.jpeg" alt="Laut Bercerita" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Laut Bercerita</h3>
+                    <p class="text-sm text-gray-600">Leila S.Chudori</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.6)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+				Seorang mahasiswa aktivis yang hilang tanpa jejak saat perlawanan terhadap rezim Orde Baru. Novel ini menggambarkan perjuangan Biru Laut dan teman-temannya dalam melawan kekejaman rezim, termasuk penyiksaan dan pengkhianatan. Selain itu, "Laut Bercerita" juga menyoroti sisi emosional dari keluarga Biru Laut, khususnya adiknya Asa Karang, yang berjuang menghadapi kehilangan dan ketidakpastian.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Gramedia Pustaka Utama</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2017</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">373</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9786020324784</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>	
+	
+	<!-- Modal for Mariposa -->
+    <div id="modal-mariposa" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-mariposa')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/mariposa.jpeg" alt="Mariposa" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Mariposa</h3>
+                    <p class="text-sm text-gray-600">Luluk HF</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="far fa-star text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.2)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+				Novel ini mengisahkan Acha, siswi cerdas yang jatuh hati pada Iqbaal sosok dingin yang sulit didekati. Setelah pertemuan di camp olimpiade, Acha pindah ke sekolah Iqbaal demi mendekatinya. Meski mereka terlibat dalam bimbingan olimpiade bersama, Iqbaal tetap tertutup. Usaha Acha justru membuatnya dianggap murahan, namun ia tak menyerah mengejar cintanya.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Coconut Books</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2018</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">482</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9786025508615</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>
+		
+	<!-- Modal Laskar Pelangi -->
+    <div id="modal-laskar-pelangi" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 relative">
+            <button onclick="closeModal('modal-laskar-pelangi')" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-start mb-4">
+                <img src="images/laskar pelangi.jpeg" alt="Laskar Pelangi" class="w-24 h-36 object-cover rounded mr-4">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Laskar Pelangi</h3>
+                    <p class="text-sm text-gray-600">Andrea Hirata</p>
+                    <div class="flex items-center mt-1">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <i class="far fa-star text-yellow-400 text-xs"></i>
+                        <span class="text-xs text-gray-500 ml-1">(4.2)</span>
+                    </div>
+                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary bg-opacity-20 text-secondary">
+                        Fiksi
+                    </span>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Sinopsis</h4>
+                <p class="text-gray-600 text-sm">
+				Menceritakan kisah anak-anak dari keluarga miskin di Pulau Belitung yang bersekolah di SD Muhammadiyah, sebuah sekolah yang hampir ditutup karena kekurangan murid. Mereka belajar dengan penuh semangat dan semangat persahabatan, didukung oleh guru-guru yang dedikatif. Cerita ini menekankan pentingnya pendidikan, persahabatan, dan perjuangan untuk mencapai cita-cita, meskipun dalam kondisi yang sulit.
+                </p>
+                <h4 class="font-semibold text-gray-900 mt-4 mb-2">Detail Buku</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="text-gray-500">Penerbit:</span>
+                        <span class="text-gray-900">Bentang Pustaka</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tahun Terbit:</span>
+                        <span class="text-gray-900">2005</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Halaman:</span>
+                        <span class="text-gray-900">536</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">ISBN:</span>
+                        <span class="text-gray-900">9793062797</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 text-sm font-medium">Pinjam Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>
+		
+            <div class="mt-10 text-center">
+                <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary">
+                    Lihat Lebih Banyak
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+   <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2 bg-white p-1 rounded">
+                        <span class="text-xl font-bold">Cendekia Libs</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Menyediakan akses pengetahuan dan informasi untuk semua lapisan masyarakat.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-300 hover:text-white">Beranda</a></li>
+						<li><a href="profil.html" class="text-gray-300 hover:text-white">Profil</a></li>
+						<li><a href="katalog.html" class="text-gray-300 hover:text-white">Katalog</a></li>
+                        <li><a href="koleksi.html" class="text-gray-300 hover:text-white">Koleksi</a></li>
+                        <li><a href="layanan.html" class="text-gray-300 hover:text-white">Layanan</a></li>
+						<li><a href="agenda.html" class="text-gray-300 hover:text-white">Agenda</a></li>
+						<li><a href="berita.html" class="text-gray-300 hover:text-white">Berita</a></li>
+						<li><a href="Panduan.html" class="text-gray-300 hover:text-white">Panduan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Jl. Perpustakaan No. 123, Kota Ilmu, 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>(021) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>info@cendekialibs.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+                <p>© 2025 Cendekia Libs. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+	
+	<script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                        menu.classList.toggle('hidden');
+                    }
+                });
+            }
+        });
+        
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('[id^="modal-"]');
+            modals.forEach(function(modal) {
+                if (event.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const openModal = document.querySelector('[id^="modal-"]:not(.hidden)');
+                if (openModal) {
+                    closeModal(openModal.id);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

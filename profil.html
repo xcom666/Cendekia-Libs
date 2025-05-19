@@ -1,0 +1,535 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Perpustakaan | Cendekia Libs</title>
+	<link rel="icon" type="image/x-icon" href="images/logo libs.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#054676',
+                        secondary: '#6b8c41',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #054676 0%, #054676 50%, #6b8c41 100%);
+        }
+        
+        .org-chart {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .org-level-1 {
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+        
+        .org-level-2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            grid-column: 1 / -1;
+        }
+        
+        .org-level-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            grid-column: 1 / -1;
+        }
+        
+        @media (max-width: 768px) {
+            .org-level-2,
+            .org-level-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .org-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2">
+                        <span class="text-xl font-bold text-primary">Cendekia Libs</span>
+                    </div>
+                        <div class="hidden md:ml-8 md:flex md:space-x-8">
+                        <a href="home.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Beranda</a>
+						<a href="profil.html" class="border-primary text-gray-900 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Profil</a>
+						<a href="katalog.html" class="border-transparent text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Katalog</a>
+						<a href="koleksi.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Koleksi</a>
+                        <a href="layanan.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Layanan</a>
+						<a href="agenda.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Agenda</a>
+                        <a href="berita.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Berita</a>
+						<a href="panduan.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Panduan & FAQ</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl">
+                Profil Perpustakaan
+            </h1>
+            <p class="mt-6 text-xl max-w-3xl mx-auto">
+                Mengenal lebih dalam tentang sejarah, visi misi, dan struktur organisasi yang membangun Perpustakaan Digital kami.
+            </p>
+        </div>
+    </div>
+
+    <!-- Profile Navigation -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex overflow-x-auto py-4 space-x-8 justify-center">
+                <a href="#tentang-kami" class="whitespace-nowrap pb-4 px-1 border-b-2 border-primary font-medium text-sm text-primary hover:text-primary hover:border-primary">
+                    Tentang Kami
+                </a>
+                <a href="#visi-misi" class="whitespace-nowrap pb-4 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    Visi & Misi
+                </a>
+                <a href="#struktur-organisasi" class="whitespace-nowrap pb-4 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    Struktur Organisasi
+                </a>
+                <a href="#kontak-kami" class="whitespace-nowrap pb-4 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    Kontak Kami
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tentang Kami / Sejarah Section -->
+<div id="tentang-kami" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Tentang Kami
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Perpustakaan Cendekia adalah pusat informasi dan pengetahuan yang didirikan pada tahun 2021 sebagai bagian dari pengembangan fasilitas pendidikan di Indonesia. Berlokasi di pusat kota, Perpustakaan Cendekia didesain sebagai perpustakaan modern yang mengintegrasikan layanan konvensional dengan teknologi digital.
+                </p>
+                <div class="mt-8">
+                    <h3 class="text-3xl font-bold text-gray-900">Sejarah Singkat</h3>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Perpustakaan Cendekia bermula sebagai perpustakaan kecil dengan koleksi 5.000 buku. Pada tahun 2021, perpustakaan mengalami renovasi besar dan perluasan gedung. Tahun 2022 menandai awal era digitalisasi dengan peluncuran sistem automasi perpustakaan. Pada tahun 2024, Perpustakaan Cendekia meluncurkan layanan perpustakaan digital dan pada tahun 2025 melakukan pembaruan komprehensif pada sistem dan layanannya.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-12 lg:mt-0">
+                <img src="images/profil.svg" alt="Perpustakaan" class="rounded-lg shadow-lg w-full h-auto object-cover object-center">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Visi Misi Section -->
+    <div id="visi-misi" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Visi & Misi Perpustakaan
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                    Landasan filosofi yang menjadi pedoman seluruh aktivitas perpustakaan kami
+                </p>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                <i class="fas fa-eye text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold text-gray-900">Visi</h3>
+                            <p class="mt-2 text-gray-600">
+                                Menjadi pusat informasi dan pengetahuan terdepan yang mendukung kegiatan pendidikan, penelitian, dan pengabdian masyarakat melalui penyediaan sumber informasi berkualitas dan layanan prima.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                <i class="fas fa-bullseye text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold text-gray-900">Misi</h3>
+                            <div class="mt-2 text-gray-600 space-y-3">
+                                <p class="flex items-start">
+                                    <span class="flex-shrink-0">•</span>
+                                    <span class="ml-2">Mengembangkan koleksi perpustakaan yang berkualitas dan relevan dengan kebutuhan pengguna</span>
+                                </p>
+                                <p class="flex items-start">
+                                    <span class="flex-shrink-0">•</span>
+                                    <span class="ml-2">Menyediakan akses informasi yang mudah, cepat, dan tepat melalui pemanfaatan teknologi informasi</span>
+                                </p>
+                                <p class="flex items-start">
+                                    <span class="flex-shrink-0">•</span>
+                                    <span class="ml-2">Memberikan layanan prima yang berorientasi pada kepuasan pengguna</span>
+                                </p>
+                                <p class="flex items-start">
+                                    <span class="flex-shrink-0">•</span>
+                                    <span class="ml-2">Membangun kerjasama dengan berbagai institusi untuk memperluas akses informasi</span>
+                                </p>
+								<p class="flex items-start">
+                                    <span class="flex-shrink-0">•</span>
+                                    <span class="ml-2">Mengembangkan kompetensi sumber daya manusia perpustakaan yang profesional</span>
+                                </p>
+								<p class="flex items-start">
+                                    <span class="flex-shrink-0">•</span>
+                                    <span class="ml-2">Menciptakan lingkungan perpustakaan yang nyaman dan kondusif untuk belajar dan penelitian</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Struktur Organisasi Section -->
+<div id="struktur-organisasi" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Struktur Organisasi
+            </h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                Tim profesional yang bekerja untuk memberikan layanan perpustakaan terbaik
+            </p>
+        </div>
+        
+        <div class="mt-12 space-y-16">
+            <!-- Level 1 - Kepala Perpustakaan -->
+            <div class="org-level-1">
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg max-w-xs">
+                    <div class="bg-primary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Kepala Perpustakaan</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Johan</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Level 2 - 6 Divisi Utama -->
+            <div class="org-level-2">
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-secondary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Divisi Pengembangan Koleksi</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Ghina</h4>
+                    </div>
+                </div>
+                
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-secondary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Divisi Layanan Pengguna</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Marsha</h4>
+                    </div>
+                </div>
+                
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-secondary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Divisi Teknologi Informasi</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Jaka</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Level 3 - Subdivisi -->
+            <div class="org-level-3">
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-secondary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Divisi Preservasi dan Konservasi</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Ade</h4>
+                    </div>
+                </div>
+                
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-secondary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Divisi Administrasi dan Keuangan</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Qayyima</h4>
+                    </div>
+                </div>
+                
+                <div class="org-card bg-white rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-secondary px-6 py-4">
+                        <h3 class="text-white text-lg font-bold text-center">Pustakawan</h3>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Aulia, Thamrin, Razzaq, Permana</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kontak Kami Section -->
+<div id="kontak-kami" class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Kontak Kami
+            </h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                Hubungi kami untuk informasi lebih lanjut atau kunjungi perpustakaan kami
+            </p>
+        </div>
+        
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Informasi Kontak dan Form -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Informasi Kontak</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Alamat</h4>
+                                <p class="text-gray-600">Jl. Galang Sewu I, Kota Semarang</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Telepon</h4>
+                                <p class="text-gray-600">(021) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@cendekialibs.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Jam Operasional</h4>
+                                <p class="text-gray-600">Senin - Jumat: 08.00 - 20.00</p>
+                                <p class="text-gray-600">Sabtu: 09.00 - 17.00</p>
+                                <p class="text-gray-600">Minggu: Tutup</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Formulir Kontak</h3>
+                        <form class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
+                                    <input type="text" id="nama" name="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm" placeholder="Nama Lengkap">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm" placeholder="email@contoh.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subjek" class="block text-sm font-medium text-gray-700">Subjek</label>
+                                <input type="text" id="subjek" name="subjek" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm" placeholder="Subjek pesan">
+                            </div>
+                            <div>
+                                <label for="pesan" class="block text-sm font-medium text-gray-700">Pesan</label>
+                                <textarea id="pesan" name="pesan" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm" placeholder="Tulis pesan Anda di sini"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                    Kirim Pesan
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Peta Lokasi -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Lokasi Kami</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.577074226941!2d110.43239527790672!3d-7.053046774769383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c030ffc4919%3A0x75575cd41be7dc83!2sJl.%20Galang%20Sewu%20I%2C%20Tembalang%2C%20Kec.%20Tembalang%2C%20Kota%20Semarang%2C%20Jawa%20Tengah%2050275!5e1!3m2!1sid!2sid!4v1747627059319!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2 bg-white p-1 rounded">
+                        <span class="text-xl font-bold">Cendekia Libs</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Menyediakan akses pengetahuan dan informasi untuk semua lapisan masyarakat.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-300 hover:text-white">Beranda</a></li>
+						<li><a href="profil.html" class="text-gray-300 hover:text-white">Profil</a></li>
+						<li><a href="katalog.html" class="text-gray-300 hover:text-white">Katalog</a></li>
+                        <li><a href="koleksi.html" class="text-gray-300 hover:text-white">Koleksi</a></li>
+                        <li><a href="layanan.html" class="text-gray-300 hover:text-white">Layanan</a></li>
+						<li><a href="agenda.html" class="text-gray-300 hover:text-white">Agenda</a></li>
+						<li><a href="berita.html" class="text-gray-300 hover:text-white">Berita</a></li>
+						<li><a href="Panduan.html" class="text-gray-300 hover:text-white">Panduan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Jl. Perpustakaan No. 123, Kota Ilmu, 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>(021) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>info@cendekialibs.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+                <p>© 2025 Cendekia Libs. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+	
+	<script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                        menu.classList.toggle('hidden');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan & FAQ | Cendekia Libs</title>
+    <link rel="icon" type="image/x-icon" href="images/logo libs.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#054676',
+                        secondary: '#6b8c41',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #054676 0%, #054676 50%, #6b8c41 100%);
+        }
+        
+        .tab-active {
+            background-color: #054676;
+            color: white;
+        }
+        
+        .tab-inactive {
+            background-color: white;
+            color: #054676;
+            border: 1px solid #054676;
+        }
+        
+        .tab-inactive:hover {
+            background-color: #f0f9ff;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2">
+                        <span class="text-xl font-bold text-primary">Cendekia Libs</span>
+                    </div>
+                    <div class="hidden md:ml-8 md:flex md:space-x-8">
+                        <a href="home.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Beranda</a>
+						<a href="profil.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Profil</a>
+                        <a href="katalog.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Katalog</a>
+                        <a href="koleksi.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Koleksi</a>
+                        <a href="layanan.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Layanan</a>
+                        <a href="agenda.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Agenda</a>
+                        <a href="berita.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Berita</a>
+						<a href="panduan.html" class="border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Panduan & FAQ</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl">
+                Panduan & FAQ
+            </h1>
+            <p class="mt-6 text-xl max-w-3xl mx-auto">
+                Temukan informasi lengkap tentang cara menggunakan layanan perpustakaan dan jawaban atas pertanyaan yang sering diajukan.
+            </p>
+        </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <button id="panduanBtn" class="tab-active py-3 px-8 rounded-md text-lg font-semibold transition-all duration-300 focus:outline-none">
+                Panduan Perpustakaan
+            </button>
+            <button id="faqBtn" class="tab-inactive py-3 px-8 rounded-md text-lg font-semibold transition-all duration-300 focus:outline-none">
+                FAQ
+            </button>
+        </div>
+
+        <!-- Panduan Content -->
+        <div id="panduanContent" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-primary mb-6">Cara Menggunakan OPAC</h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Langkah-langkah Pencarian Sederhana</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Akses website perpustakaan di www.perpustakaancendekia.ac.id</li>
+                        <li>Klik menu "Katalog Online"</li>
+                        <li>Masukkan kata kunci pada kotak pencarian</li>
+                        <li>Klik tombol "Cari" atau tekan Enter</li>
+                        <li>Hasil pencarian akan ditampilkan, klik judul untuk melihat detail</li>
+                    </ol>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Pencarian Lanjutan</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Klik opsi "Pencarian Lanjutan"</li>
+                        <li>Isi kriteria pencarian (judul, pengarang, subjek, dll)</li>
+                        <li>Tentukan filter tambahan jika diperlukan</li>
+                        <li>Klik tombol "Cari"</li>
+                        <li>Hasil dapat diurutkan berdasarkan relevansi, tahun, atau abjad</li>
+                    </ol>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Tips Pencarian Efektif</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Gunakan kata kunci spesifik</li>
+                        <li>Manfaatkan operator Boolean (AND, OR, NOT)</li>
+                        <li>Gunakan tanda kutip untuk frasa tepat</li>
+                        <li>Perhatikan filter dan batasan pencarian</li>
+                        <li>Periksa ejaan jika hasil tidak sesuai harapan</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-primary mb-6">Syarat dan Ketentuan Peminjaman Buku</h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Persyaratan Keanggotaan</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Kartu Tanda Mahasiswa (KTM) aktif atau Kartu Pegawai</li>
+                        <li>Mengisi formulir pendaftaran</li>
+                        <li>Foto ukuran 3x4 (2 lembar)</li>
+                        <li>Tidak memiliki tanggungan denda atau buku</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Prosedur Peminjaman</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Temukan buku yang diinginkan melalui OPAC</li>
+                        <li>Catat nomor panggil (call number)</li>
+                        <li>Cari buku di rak sesuai nomor panggil</li>
+                        <li>Bawa buku ke meja sirkulasi atau gunakan kiosk peminjaman mandiri</li>
+                        <li>Tunjukkan kartu anggota perpustakaan</li>
+                        <li>Proses peminjaman akan dicatat dalam sistem</li>
+                    </ol>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Ketentuan Peminjaman</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Mahasiswa S1: maksimal 5 buku, 14 hari</li>
+                        <li>Mahasiswa S2/S3: maksimal 7 buku, 21 hari</li>
+                        <li>Dosen/Staf: maksimal 10 buku, 30 hari</li>
+                        <li>Perpanjangan maksimal 2 kali jika tidak direservasi pengguna lain</li>
+                        <li>Denda keterlambatan: Rp2.000/hari/buku</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Prosedur Pengembalian</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Bawa buku ke meja sirkulasi atau gunakan dropbox</li>
+                        <li>Tunjukkan kartu anggota (jika di meja sirkulasi)</li>
+                        <li>Petugas akan memproses pengembalian</li>
+                        <li>Pastikan untuk mendapatkan bukti pengembalian</li>
+                    </ol>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sanksi</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Keterlambatan: denda per hari per buku</li>
+                        <li>Kerusakan ringan: denda sesuai tingkat kerusakan</li>
+                        <li>Kerusakan berat/hilang: mengganti dengan buku yang sama atau membayar 2x harga buku</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Content -->
+        <div id="faqContent" class="bg-white p-6 rounded-lg shadow-md hidden">
+            <h2 class="text-2xl font-bold text-primary mb-6">Pertanyaan yang Sering Diajukan</h2>
+            
+            <div class="space-y-6">
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">1. Bagaimana cara menjadi anggota perpustakaan?</h3>
+                    <p class="text-gray-600">
+                        Anda perlu mengisi formulir pendaftaran di meja sirkulasi atau online melalui website perpustakaan, menyerahkan fotokopi KTM/Kartu Pegawai, foto 3x4 (2 lembar), dan mengikuti orientasi singkat perpustakaan.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">2. Berapa lama masa berlaku keanggotaan perpustakaan?</h3>
+                    <p class="text-gray-600">
+                        Untuk mahasiswa, masa berlaku keanggotaan sesuai dengan masa studi. Untuk dosen dan staf, masa berlaku keanggotaan selama masih aktif bekerja di institusi.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">3. Apa yang harus dilakukan jika kartu anggota hilang?</h3>
+                    <p class="text-gray-600">
+                        Segera laporkan ke bagian sirkulasi untuk pemblokiran kartu. Untuk penggantian kartu, isi formulir kehilangan, sertakan surat kehilangan dari kepolisian, dan bayar biaya penggantian kartu sebesar Rp50.000.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">4. Bagaimana cara mengakses e-resources dari luar kampus?</h3>
+                    <p class="text-gray-600">
+                        Gunakan fitur Remote Access dengan memasukkan username dan password yang sama dengan akun perpustakaan Anda. Untuk panduan lebih detail, kunjungi menu "Panduan Akses E-Resources" di website.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">5. Apakah perpustakaan menyediakan layanan fotokopi?</h3>
+                    <p class="text-gray-600">
+                        Ya, layanan fotokopi tersedia di lantai 1 perpustakaan dengan biaya Rp500/lembar untuk ukuran A4 dan Rp1.000/lembar untuk ukuran A3. Pengguna juga dapat melakukan scan dokumen secara gratis.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">6. Bagaimana cara mengusulkan pengadaan buku baru?</h3>
+                    <p class="text-gray-600">
+                        Pengguna dapat mengusulkan pengadaan buku melalui form usulan di website atau menghubungi pustakawan di bagian pengembangan koleksi. Setiap usulan akan dipertimbangkan sesuai dengan kebijakan pengembangan koleksi.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">7. Apa saja fasilitas yang dapat digunakan di perpustakaan?</h3>
+                    <p class="text-gray-600">
+                        Perpustakaan menyediakan ruang baca, ruang diskusi, ruang multimedia, komputer untuk akses internet, WiFi, ruang quiet study, dan co-working space.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2 bg-white p-1 rounded">
+                        <span class="text-xl font-bold">Cendekia Libs</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Menyediakan akses pengetahuan dan informasi untuk semua lapisan masyarakat.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-300 hover:text-white">Beranda</a></li>
+						<li><a href="profil.html" class="text-gray-300 hover:text-white">Profil</a></li>
+						<li><a href="katalog.html" class="text-gray-300 hover:text-white">Katalog</a></li>
+                        <li><a href="koleksi.html" class="text-gray-300 hover:text-white">Koleksi</a></li>
+                        <li><a href="layanan.html" class="text-gray-300 hover:text-white">Layanan</a></li>
+						<li><a href="agenda.html" class="text-gray-300 hover:text-white">Agenda</a></li>
+						<li><a href="berita.html" class="text-gray-300 hover:text-white">Berita</a></li>
+						<li><a href="Panduan.html" class="text-gray-300 hover:text-white">Panduan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Jl. Perpustakaan No. 123, Kota Ilmu, 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>(021) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>info@cendekialibs.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+                <p>© 2025 Cendekia Libs. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+		// Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                        menu.classList.toggle('hidden');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+		
+        // Tab switching functionality
+        const panduanBtn = document.getElementById('panduanBtn');
+        const faqBtn = document.getElementById('faqBtn');
+        const panduanContent = document.getElementById('panduanContent');
+        const faqContent = document.getElementById('faqContent');
+        
+        panduanBtn.addEventListener('click', function() {
+            panduanBtn.classList.add('tab-active');
+            panduanBtn.classList.remove('tab-inactive');
+            faqBtn.classList.add('tab-inactive');
+            faqBtn.classList.remove('tab-active');
+            
+            panduanContent.classList.remove('hidden');
+            faqContent.classList.add('hidden');
+        });
+        
+        faqBtn.addEventListener('click', function() {
+            faqBtn.classList.add('tab-active');
+            faqBtn.classList.remove('tab-inactive');
+            panduanBtn.classList.add('tab-inactive');
+            panduanBtn.classList.remove('tab-active');
+            
+            faqContent.classList.remove('hidden');
+            panduanContent.classList.add('hidden');
+        });
+    </script>
+</body>

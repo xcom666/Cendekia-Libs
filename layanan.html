@@ -1,0 +1,362 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan | Cendekia Libs</title>
+	<link rel="icon" type="image/x-icon" href="images/logo libs.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#054676',
+                        secondary: '#6b8c41',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #054676 0%, #054676 50%, #6b8c41 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2">
+                        <span class="text-xl font-bold text-primary">Cendekia Libs</span>
+                    </div>
+                    <div class="hidden md:ml-8 md:flex md:space-x-8">
+                        <a href="home.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Beranda</a>
+						<a href="profil.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Profil</a>
+						<a href="katalog.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Katalog</a>
+						<a href="koleksi.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Koleksi</a>
+                        <a href="layanan.html" class="border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Layanan</a>
+						<a href="agenda.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Agenda</a>
+                        <a href="berita.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Berita</a>
+						<a href="panduan.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Panduan & FAQ</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl">
+                Layanan Perpustakaan
+            </h1>
+            <p class="mt-6 text-xl max-w-3xl mx-auto">
+                Berbagai layanan perpustakaan yang dapat membantu kebutuhan akademik dan penelitian Anda. Kami berkomitmen memberikan layanan terbaik untuk mendukung kegiatan literasi dan pembelajaran.
+            </p>
+        </div>
+    </div>
+
+            <!-- Service Navigation -->
+    <div class="bg-white shadow-md rounded-lg my-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center py-4 gap-4">
+                <a href="#layanan-sirkulasi" class="flex items-center px-4 py-3 rounded-lg bg-primary text-white transition-all duration-300 hover:bg-primary-dark whitespace-nowrap font-medium">
+                    <i class="fas fa-book-reader mr-2"></i>
+                    Layanan Sirkulasi
+                </a>
+                <a href="#layanan-referensi" class="flex items-center px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-100 whitespace-nowrap font-medium text-gray-700 hover:text-primary">
+                    <i class="fas fa-book mr-2"></i>
+                    Layanan Referensi
+                </a>
+                <a href="#layanan-penelusuran" class="flex items-center px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-100 whitespace-nowrap font-medium text-gray-700 hover:text-primary">
+                    <i class="fas fa-search mr-2"></i>
+                    Layanan Penelusuran Informasi
+                </a>
+                <a href="#layanan-digital" class="flex items-center px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-100 whitespace-nowrap font-medium text-gray-700 hover:text-primary">
+                    <i class="fas fa-laptop mr-2"></i>
+                    Layanan Digital
+                </a>
+                <a href="#layanan-multimedia" class="flex items-center px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-100 whitespace-nowrap font-medium text-gray-700 hover:text-primary">
+                    <i class="fas fa-photo-video mr-2"></i>
+                    Layanan Multimedia
+                </a>
+                <a href="#layanan-ruang" class="flex items-center px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-100 whitespace-nowrap font-medium text-gray-700 hover:text-primary">
+                    <i class="fas fa-users mr-2"></i>
+                    Layanan Ruang Diskusi
+                </a>
+                <a href="#layanan-pelatihan" class="flex items-center px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-100 whitespace-nowrap font-medium text-gray-700 hover:text-primary">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i>
+                    Layanan Pelatihan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+	<div class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Layanan Sirkulasi -->
+            <div id="layanan-sirkulasi" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">1. Layanan Sirkulasi</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan peminjaman, pengembalian, dan perpanjangan bahan pustaka.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                        <li>Peminjaman Mandiri</li>
+                        <li>Pengembalian 24 jam melalui dropbox</li>
+                        <li>Perpanjangan online melalui website atau aplikasi</li>
+                        <li>Reservasi buku</li>
+                        <li>Layanan antar buku ke fakultas (book delivery)</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Jadwal Layanan:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Senin - Jumat: 09.00 - 16.00 WIB</li>
+                        <li>Sabtu: 09.00 - 12.00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+	
+            <!-- Layanan Referensi -->
+            <div id="layanan-referensi" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">2. Layanan Referensi</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan konsultasi penelusuran informasi dan rujukan untuk kebutuhan akademik dan penelitian.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                        <li>Konsultasi tatap muka</li>
+                        <li>Konsultasi online (email, chat, video call)</li>
+                        <li>Bantuan penelusuran literatur</li>
+                        <li>Verifikasi bibliografi</li>
+                        <li>Pelatihan penelusuran informasi</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Jadwal Layanan:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Senin - Jumat: 09.00 - 16.00 WIB</li>
+                        <li>Sabtu: 09.00 - 12.00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Layanan Penelusuran Informasi -->
+            <div id="layanan-penelusuran" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">3. Layanan Penelusuran Informasi</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan bantuan untuk menemukan informasi spesifik sesuai kebutuhan pengguna.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Penelusuran artikel jurnal</li>
+                        <li>Penelusuran tugas akhir/skripsi/tesis/disertasi</li>
+                        <li>Penelusuran e-resources</li>
+                        <li>Current awareness service</li>
+                        <li>Selective dissemination of information</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Layanan Digital -->
+            <div id="layanan-digital" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">4. Layanan Digital</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan akses terhadap sumber informasi digital.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Akses e-book dan e-journal</li>
+                        <li>Akses repositori institusi</li>
+                        <li>Akses database online</li>
+                        <li>Pemindaian (scanning) dokumen</li>
+                        <li>Konversi format dokumen</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Layanan Multimedia -->
+            <div id="layanan-multimedia" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">5. Layanan Multimedia</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan fasilitas dan koleksi multimedia.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Ruang audio visual</li>
+                        <li>Koleksi film dan dokumenter</li>
+                        <li>Perangkat lunak pendidikan</li>
+                        <li>Fasilitas editing audio dan video</li>
+                        <li>Studio rekaman mini</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Layanan Ruang Diskusi dan Kolaborasi -->
+            <div id="layanan-ruang" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">6. Layanan Ruang Diskusi dan Kolaborasi</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan penyediaan ruang untuk kegiatan diskusi dan kolaborasi.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                        <li>Ruang diskusi kelompok kecil (kapasitas 4-8 orang)</li>
+                        <li>Ruang kolaborasi (kapasitas 10-15 orang)</li>
+                        <li>Ruang presentasi (kapasitas 20-30 orang)</li>
+                        <li>Ruang quiet study</li>
+                        <li>Co-working space</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sistem Reservasi:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Reservasi online melalui website</li>
+                        <li>Durasi penggunaan: 2 jam per sesi, maksimal 2 sesi per hari</li>
+                        <li>Dapat diperpanjang jika tidak ada reservasi lain</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Layanan Pelatihan dan Workshop -->
+            <div id="layanan-pelatihan" class="mb-16">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">7. Layanan Pelatihan dan Workshop</h2>
+                    <p class="text-lg text-gray-700 mb-6"> Layanan pelatihan dan workshop terkait literasi informasi dan perpustakaan.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Detail Layanan:</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Pelatihan literasi informasi</li>
+                        <li>Workshop penelusuran database</li>
+                        <li>Pelatihan penulisan karya ilmiah</li>
+                        <li>Workshop penggunaan reference manager</li>
+                        <li>Pelatihan evaluasi sumber informasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="images/logo libs.svg" alt="Cendekia Libs Logo" class="h-10 w-auto mr-2 bg-white p-1 rounded">
+                        <span class="text-xl font-bold">Cendekia Libs</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Menyediakan akses pengetahuan dan informasi untuk semua lapisan masyarakat.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-300 hover:text-white">Beranda</a></li>
+						<li><a href="profil.html" class="text-gray-300 hover:text-white">Profil</a></li>
+						<li><a href="katalog.html" class="text-gray-300 hover:text-white">Katalog</a></li>
+                        <li><a href="koleksi.html" class="text-gray-300 hover:text-white">Koleksi</a></li>
+                        <li><a href="layanan.html" class="text-gray-300 hover:text-white">Layanan</a></li>
+						<li><a href="agenda.html" class="text-gray-300 hover:text-white">Agenda</a></li>
+						<li><a href="berita.html" class="text-gray-300 hover:text-white">Berita</a></li>
+						<li><a href="Panduan.html" class="text-gray-300 hover:text-white">Panduan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Jl. Perpustakaan No. 123, Kota Ilmu, 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>(021) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>info@cendekialibs.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+                <p>© 2025 Cendekia Libs. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                        menu.classList.toggle('hidden');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
